@@ -8,8 +8,17 @@
 </head>
 
 <body>
-    지도에서 선택하는 페이지<br>
-    <a href="{% url 'show' %}">지도에서 특정 빵집을 선택.</a>
+    빵집을 선택하세요.<br><br>
+    <div>
+        {% for bakery in bakeries %}
+        <div>
+            <a href="{% url 'show' bakery.id %}">{{bakery.Bakery_name}}</a><br>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
 </body>
 
 </html>

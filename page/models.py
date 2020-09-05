@@ -29,4 +29,4 @@ class Bakery_Review(models.Model):
     Bakery_Contents = models.TextField()
 
     def __str__(self):
-        return self.info.Bakery_name
+        return str(self.info.Bakery_name)

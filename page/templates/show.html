@@ -4,11 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>00빵집</title>
+    <title>선택한 빵집 리뷰</title>
 </head>
 
 <body>
-    빵집 detail
+    빵집 이름: {{bakery.Bakery_name}}<br>
+    빵집 주소: {{bakery.Bakery_address}}<br>
+    대표메뉴: {{bakery.Bakery_menu}}<br><br>
+    리뷰 보기<br><br>
+
+    <div>
+        {% for review in reviews %}
+
+        <div>
+            {% if review.info.Bakery_name == bakery.Bakery_name %}
+
+            <div>
+                작성자: {{review.Bakery_Reviewer}}<br>
+                리뷰 내용: {{review.Bakery_Contents}}<br><br>
+            </div>
+
+            {% endif %}
+        </div>
+
+        {% endfor %}
+    </div>
+
 </body>
 
 </html>
